@@ -1,0 +1,53 @@
+.content-text{
+    background-color: rgb(210, 208, 208);
+    height: 30px;
+    display: flex;
+    align-items: center;
+
+}
+.rowheader{
+    height: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#fff;
+}
+.but{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+input[type="button"]{
+    margin: 0 10px;
+    width: 150px;
+    height: 30px;
+    border-radius: 5px 5px 5px 5px;
+    font-weight: 700;
+}
+input[type="button"]:hover{
+    background-color: burlywood;
+    color: #fff;
+    font-weight: 700;
+}
+td{
+    width: 300px;
+    height:50px;
+}
+th{
+    height:30px;
+
+}
+table, th, td{
+    border:1px solid #868585;
+}
+table{
+    border-collapse:collapse;
+}
+table tr:nth-child(odd){
+    background-color:#eee;
+}
+table tr:nth-child(even){
+    background-color:white;
+}

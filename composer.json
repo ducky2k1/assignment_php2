@@ -1,0 +1,18 @@
+{
+    "name": "trinhduc/assign_php2",
+    "autoload": {
+        "psr-4": {
+            "Trinhduc\\AssignPhp2\\": ["app/","app/Controllers"]
+        }
+    },
+    "authors": [
+        {
+            "name": "ducky2k1",
+            "email": "trinhduc59@gmail.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.5",
+        "eftec/bladeone": "^4.9"
+    }
+}

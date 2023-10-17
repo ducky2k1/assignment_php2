@@ -1,0 +1,11 @@
+
+@if(!isset($_SESSION['login']))
+    <a href="./login.php?url=dn" class="text-gray-800 hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 py-2 md:px-5 md:py-2.5 mr-1 md:mr-2 focus:outline-none">Login</a>
+    <a href="./login.php?url=dk" class="text-white bg-[#37A9CD] hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 md:px-5 md:py-2.5 mr-1 md:mr-2 focus:outline-none">Sign up</a>
+@else
+    <a href="./login.php?url=dx" class="font-semibold text-[14px] flex justify-center">
+        <button class="bg-[#37A9CD] hover:bg-sky-700 rounded-[20px] w-[100px] h-[30px] text-white">
+            Đăng xuất
+        </button>
+    </a>
+@endif
