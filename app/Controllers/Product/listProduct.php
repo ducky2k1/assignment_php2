@@ -42,7 +42,7 @@ class listProduct
     echo $blade->run('showKhachHang',['data' => $data]);
     }
     public static function showBinhLuan(){
-        $sql = 'SELECT * FROM `binh_luan`';
+        $sql = 'SELECT * FROM `binh_luan` JOIN user on binh_luan.ma_kh = user.ma_us ORDER BY ma_bl ASC';
         $db = new DBconnection();
         $conn = $db->connect();
         $stmt = $conn->prepare($sql);

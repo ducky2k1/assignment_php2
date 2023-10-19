@@ -29,17 +29,12 @@ class users
         $mail = $_POST['email'];
         $password = $_POST['password'];
         $error = [];
-//        if (empty($username) || empty($password)) {
-//            // mở file index.php với tham số đi kèm
-//            header("location:login.php?url=showLogin&error=empty");
-//            return;
-//        }
         // mo ket noi , query username. ....
-        $sql = 'Select * from user where email = :username';
+        $sql = 'Select * from user where email = ?';
         $db = new DBConnection();
         $conn = $db->connect();
         $stmp = $conn->prepare($sql);
-        $stmp->bindParam(":username", $mail);
+        $stmp->bindParam(1, $mail);
         $stmp->execute();
         $row = $stmp->fetch(\PDO::FETCH_ASSOC);
 

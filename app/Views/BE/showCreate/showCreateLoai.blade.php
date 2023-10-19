@@ -63,7 +63,7 @@
             <br>
             <br>
             <div class="but">
-                <button type="submit" name="them">Thêm mới</button>
+                <button type="submit" name="them" style="width: 100px;height: 30px;border-radius: 5px 5px 5px 5px; font-weight: 700">Thêm mới</button>
                 <input type="reset" value="Nhập lại">
                 <a href="./BE.php"><input type="button" value="Danh sách"></a>
             </div>

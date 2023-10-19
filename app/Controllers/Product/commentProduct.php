@@ -12,7 +12,7 @@ class commentProduct
         $date = date('Y-m-d');
         $comment = $_POST['cmt'];
         $ma_us = $_SESSION['login']['id'];
-        $sql="INSERT INTO `binh_luan`(`noi_dung`, `ma_hh`, `ma_kh`, `ngay_bl`) VALUES (?,?,?,?) ";
+        $sql="INSERT INTO `binh_luan`(`noi_dung`, `ma_hh`, `ma_kh`, `ngay_bl`,`status`) VALUES (?,?,?,?,'chưa duyệt') ";
         $db = new DBConnection();
         $connect = $db->connect();
         $stmp = $connect->prepare($sql);
@@ -21,7 +21,7 @@ class commentProduct
         $stmp->bindParam(3, $ma_us, \PDO::PARAM_STR);
         $stmp->bindParam(4, $date, \PDO::PARAM_STR);
         if ($stmp->execute()) {
-            echo "<script>alert('Comment Succesfuly!');</script>";
+            echo "<script>alert('Bình luận thành công! Vui lòng chờ xác nhận từ quản trị viên.');</script>";
             header("Refresh: 3; URL=index.php?url=ct&id=$ma_hh");
         } else {
             echo 'Co loi xay ra, vui long kiem tra lai.';

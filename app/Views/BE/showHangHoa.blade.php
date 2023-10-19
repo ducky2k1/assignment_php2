@@ -1,4 +1,4 @@
-<div class="rowheader"><h1>Danh sách loại hàng</h1></div>
+<div class="rowheader"><h1>Danh sách hàng hóa</h1></div>
 <div class="row-content">
     <form action="" method="post">
         <div class="tab">
@@ -33,12 +33,12 @@
                         <td align="center">{{$item['mo_ta']}}</td>
                         <td align="center">{{$item['dac_biet']}}</td>
                         <td align="center">{{$item['so_luot_xem']}}</td>
-                        <td align="center">{{$item['ma_loai']}} - {{$item['ten_loai']}}</td>
+                        <td align="center">{{$item['ma_loai']}}</td>
 
                         <td style="display:flex;justify-content: center;align-items: center;">
-                            <a href="edit_hanghoa.php?ma_hh={{$item['ma_hh']}}"><input type="button" value="Sửa" style="width:60px"></a>
+                            <a href="BE.php?url=showEditProduct&id={{$item['ma_hh']}}"><input type="button" value="Sửa" style="width:60px"></a>
 
-                            <a href="danhsach_hanghoa.php?ma_hh={{$item['ma_hh']}}" onclick="return confirm('Bạn có chắc xóa không')">
+                            <a href="BE.php?url=deleteProduct&ma_hh={{$item['ma_hh']}}" onclick="return confirm('Bạn có chắc xóa không')">
                                 <input type="button" value="Xóa" style="width:60px">
                             </a>
                         </td>
@@ -52,8 +52,8 @@
         <div class="but">
             <input type="button" value="Chọn tất cả" id="btn1">
             <input type="button" value="Bỏ chọn tất cả" id="btn2">
-            <input type="button" value="Xóa các mục đã chọn">
-            <a href="admin.php"><input type="button" value="Nhập thêm"></a>
+            <input type="button" value="Xóa mục đã chọn">
+            <a href="BE.php?url=showCreateProduct"><input type="button" value="Nhập thêm"></a>
         </div>
 
     </form>

@@ -26,7 +26,7 @@ class product
         $stmt = $conn->prepare($sql);
         $stmt->execute();
 
-        $sql2="SELECT * FROM `hang_hoa` JOIN `binh_luan` on `hang_hoa`.`ma_hh`=`binh_luan`.`ma_hh` JOIN `user` on `binh_luan`.`ma_kh`=`user`.`ma_us` WHERE `hang_hoa`.`ma_hh`=?";
+        $sql2="SELECT * FROM `hang_hoa` JOIN `binh_luan` on `hang_hoa`.`ma_hh`=`binh_luan`.`ma_hh` JOIN `user` on `binh_luan`.`ma_kh`=`user`.`ma_us` WHERE `hang_hoa`.`ma_hh`=? AND `binh_luan`.`status`='đã duyệt' ";
         $stmp2 = $conn->prepare($sql2);
         $stmp2->bindParam(1, $ma_hh);
         $stmp2->execute();

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="public/css/styleBE.css">
     <link rel="stylesheet" href="public/css/styleTable.css">
 
+
 </head>
 <body>
 <div class="container">
@@ -29,6 +30,9 @@
     use Dotenv\Dotenv;
     use Trinhduc\AssignPhp2\Controllers\Product\type;
     use Trinhduc\AssignPhp2\Product\listProduct;
+    use Trinhduc\AssignPhp2\Controllers\Product\productBE;
+    use Trinhduc\AssignPhp2\Controllers\Product\customer;
+    use Trinhduc\AssignPhp2\Controllers\Product\commentBE;
     $dotenv = Dotenv::createImmutable(__DIR__);
     $dotenv->load();
 
@@ -46,6 +50,18 @@
     $route->addRoute('deleteLoai', [type::class, 'deleteLoai']);
     $route->addRoute('showEditLoai', [type::class, 'showEditLoai']);
     $route->addRoute('updateLoai', [type::class, 'updateLoai']);
+    $route->addRoute('showCreateProduct', [productBE::class, 'showCreateProduct']);
+    $route->addRoute('deleteProduct', [productBE::class, 'deleteProduct']);
+    $route->addRoute('createProduct', [productBE::class, 'createProduct']);
+    $route->addRoute('showEditProduct', [productBE::class, 'showEditProduct']);
+    $route->addRoute('updateProduct', [productBE::class, 'updateProduct']);
+    $route->addRoute('showCreateCustomer', [customer::class, 'showCreateCustomer']);
+    $route->addRoute('createCustomer', [customer::class, 'createCustomer']);
+    $route->addRoute('deleteUser', [customer::class, 'deleteUser']);
+    $route->addRoute('showEditCustomer', [customer::class, 'showEditCustomer']);
+    $route->addRoute('updateCustomer', [customer::class, 'updateCustomer']);
+    $route->addRoute('deleteComment', [commentBE::class, 'deleteComment']);
+    $route->addRoute('confirm', [commentBE::class, 'confirm']);
     // lay ra hàm trc đó đã thêm trong route
     $handler = $route->getRoute($url);
     call_user_func($handler);

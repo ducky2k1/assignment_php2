@@ -1,4 +1,4 @@
-<div class="rowheader"><h1>Danh sách loại hàng</h1></div>
+<div class="rowheader"><h1>Danh sách bình luận</h1></div>
 <div class="row-content">
     <form action="" method="post">
         <div class="tab">
@@ -11,6 +11,7 @@
                     <th>Mã hàng hóa</th>
                     <th>Mã khách hàng</th>
                     <th>Ngày bình luận</th>
+                    <th>Trạng thái</th>
                     <th>Chức năng</th>
                 </tr>
                 </thead>
@@ -22,12 +23,23 @@
                         <td align="center">{{$item['ma_bl']}}</td>
                         <td align="center">{{$item['noi_dung']}}</td>
                         <td align="center">{{$item['ma_hh']}}</td>
-                        <td align="center">{{$item['ma_kh']}}</td>
+                        <td align="center">{{$item['ma_kh']}} - {{$item['fullname']}}</td>
                         <td align="center">{{$item['ngay_bl']}}</td>
+                        <td align="center" style="
+                        @if($item['status']=='chưa duyệt')
+                            color:red;
+                        @else
+                            color: green;
+                        @endif
+                        ">{{$item['status']}}</td>
                         <td style="display:flex;justify-content: center;align-items: center;">
-                            <a href="edit_binhluan.php?ma_bl={{$item['ma_bl']}}"><input type="button" value="Sửa" style="width:60px"></a>
+                            @if($item['status']=='chưa duyệt')
+                                <a href="BE.php?url=confirm&ma_bl={{$item['ma_bl']}}"><input type="button" value="Duyệt" style="width:60px"></a>
+                            @else
 
-                            <a href="danhsach_binhluan.php?ma_bl={{$item['ma_bl']}}" onclick="return confirm('Bạn có chắc xóa không')">
+                            @endif
+
+                            <a href="BE.php?url=deleteComment&ma_bl={{$item['ma_bl']}}" onclick="return confirm('Bạn có chắc xóa không')">
                                 <input type="button" value="Xóa" style="width:60px">
                             </a>
                         </td>
@@ -41,8 +53,7 @@
         <div class="but">
             <input type="button" value="Chọn tất cả" id="btn1">
             <input type="button" value="Bỏ chọn tất cả" id="btn2">
-            <input type="button" value="Xóa các mục đã chọn">
-            <a href="admin.php"><input type="button" value="Nhập thêm"></a>
+            <input type="button" value="Xóa mục đã chọn">
         </div>
 
     </form>

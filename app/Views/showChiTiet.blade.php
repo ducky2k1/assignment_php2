@@ -57,7 +57,7 @@
         <form action="./comment.php?url=add&id={{$data['hanghoa']['ma_hh']}}" method="post">
             <textarea name="cmt" id="" cols="30" rows="10" class="w-full border-[2px] p-[25px]"></textarea>
             <div class="w-full flex justify-center">
-                <input type="submit" value="Bình luận" name="bl" class="bg-sky-500 hover:bg-sky-700 text-white w-[150px] h-[30px] rounded-[5px]">
+                <button type="submit" value="Bình luận" name="bl" class="bg-sky-500 hover:bg-sky-700 text-white w-[150px] h-[30px] rounded-[5px]">Bình luận</button>
             </div>
 
         </form>

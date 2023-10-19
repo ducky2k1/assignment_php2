@@ -1,4 +1,4 @@
-<div class="rowheader"><h1>Danh sách loại hàng</h1></div>
+<div class="rowheader"><h1>Danh sách khách hàng</h1></div>
 <div class="row-content">
  <form action="" method="post">
  <div class="tab">
@@ -29,9 +29,12 @@
  <td><img src="./public/img_upload/<?php echo \htmlentities($item['hinh']??'', ENT_QUOTES, 'UTF-8', false); ?>" alt="" class="h-10 w-10" style="width:100px;"></td>
  <td> <?php echo \htmlentities($item['location']??'', ENT_QUOTES, 'UTF-8', false); ?></td>
  <td><?php echo \htmlentities($item['role']??'', ENT_QUOTES, 'UTF-8', false); ?> </td>
- <td class="">
- <a href="./index.php?act=edit_kh&id=<?php echo \htmlentities($item['ma_us']??'', ENT_QUOTES, 'UTF-8', false); ?>" style="color:orange">Sửa</a>
- <a href="./index.php?act=del_kh&id=<?php echo \htmlentities($item['ma_us']??'', ENT_QUOTES, 'UTF-8', false); ?>" style="color: red;margin:0 10px;" onclick="return confirm('Bạn có chắc xóa không')">Xóa</a>
+ <td style="display:flex;justify-content: center;align-items: center; width: 100%">
+ <a href="BE.php?url=showEditCustomer&id=<?php echo \htmlentities($item['ma_us']??'', ENT_QUOTES, 'UTF-8', false); ?>"><input type="button" value="Sửa" style="width:60px"></a>
+
+ <a href="BE.php?url=deleteUser&id=<?php echo \htmlentities($item['ma_us']??'', ENT_QUOTES, 'UTF-8', false); ?>" onclick="return confirm('Bạn có chắc xóa không')">
+ <input type="button" value="Xóa" style="width:60px">
+ </a>
  </td>
  </tr>
 
@@ -43,8 +46,8 @@
  <div class="but">
  <input type="button" value="Chọn tất cả" id="btn1">
  <input type="button" value="Bỏ chọn tất cả" id="btn2">
- <input type="button" value="Xóa các mục đã chọn">
- <a href="admin.php"><input type="button" value="Nhập thêm"></a>
+ <input type="button" value="Xóa mục đã chọn">
+ <a href="BE.php?url=showCreateCustomer"><input type="button" value="Nhập thêm"></a>
  </div>
 
  </form>

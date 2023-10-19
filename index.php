@@ -177,10 +177,10 @@ $route = new \common\Route();
                 <div class="boxcontent2 ">
                     <ul>
                         <li><a href="./index.php">Sản phẩm</a></li>
-                        <li><a href="./index.php?act=dh">Đồng hồ</a></li>
-                        <li><a href="./index.php?act=dt">Điện thoại</a></li>
-                        <li><a href="./index.php?act=lt">Laptop</a></li>
-                        <li><a href="./index.php?act=ma">Máy ảnh</a></li>
+                        <li><a href="./index.php?url=dh">Đồng hồ</a></li>
+                        <li><a href="./index.php?url=dt">Điện thoại</a></li>
+                        <li><a href="./index.php?url=lt">Laptop</a></li>
+                        <li><a href="./index.php?url=ma">Máy ảnh</a></li>
 
                     </ul>
                 </div>
