@@ -1,0 +1,52 @@
+<div class="rowheader"><h1>Thêm USER</h1></div>
+<div class="row-content">
+ <form action="./BE.php?url=createCustomer" method="post" enctype="multipart/form-data">
+ <div class="content-text">
+ <label for="">Họ và tên</label>
+ </div>
+ <input name="fullname" value="" class="" type="text">
+ <span class=""><?= $errer['fullname'] ?? "" ?></span>
+ <br>
+ <div class="content-text">
+ <label for="" >Email</label>
+ </div>
+ <input name="email" value="" class="" type="email">
+ <span class=""><?= $errer['email'] ?? "" ?></span>
+ <br>
+ <div class="content-text">
+ <label for="" >Mật khẩu</label>
+ </div>
+ <input name="password" value="" class="" type="password">
+ <span class=""><?= $errer['password'] ?? "" ?></span>
+ <br>
+ <div class="content-text">
+ <label for="" >Hình ảnh</label>
+ </div>
+ <input name="img" class="" type="file">
+ <span class=""><?= $errer['img'] ?? "" ?></span>
+ <br>
+ <div class="content-text">
+ <label for="" >Địa chỉ</label>
+ </div>
+ <input name="location" value="" class="" type="text">
+ <span class=""><?= $errer['location'] ?? "" ?></span>
+ <br>
+ <div class="content-text">
+ <label for="" >Quyền truy cập</label>
+ </div>
+ <select name="role" id="" class="">
+ <option value="user" <?= (isset($_POST['role']) && ($_POST['role'] == "user")) ? "selected" : "" ?>>Người dùng</option>
+ <option value="admin" <?= (isset($_POST['role']) && ($_POST['role'] == "admin")) ? "selected" : "" ?>>Quản trị</option>
+ </select>
+ <span class=" "><?= $errer['role'] ?? "" ?></span>
+ <br>
+ <br>
+ <div class="but">
+ <button type="submit" name="them">Thêm mới</button>
+ <button type="reset">Nhập lại</button>
+ <a href="BE.php?url=kh" class=""><input type="button" value="Danh sách"></a>
+
+ </div>
+
+ </form>
+</div>
